@@ -1,7 +1,7 @@
 # Home Mapping Robot (RPi + Arduino + LiDAR)
 
 ## Overview
-TODO: 3–5 lines on what this project is and what stage it is at now.
+The robot is currently able to publish EKF data - filtered numbers for IMU and Odom
 
 ## Hardware
 - Raspberry Pi 4
@@ -25,8 +25,8 @@ TODO: 3–5 lines on what this project is and what stage it is at now.
 ## How to Run (short)
 1. Start Arduino serial bridge
 2. Start EKF
-3. Start LiDAR driver
-4. (Later) Start SLAM node
+3. (Later) Start LiDAR driver
+5. (Later) Start SLAM node
 
 ## Documentation
 See the `docs/` folder for:
