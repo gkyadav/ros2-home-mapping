@@ -68,3 +68,14 @@ When all are running, you should see:
 /odometry/filtered from EKF
 
 /scan from LiDAR
+
+## Arduino Firmware
+
+The Arduino code used for motor control + encoders + IMU + magnetometer lives in:
+
+`firmware/arduino/home_mapping_controller/`
+
+This firmware:
+- Reads wheel encoders, IMU, and magnetometer
+- Controls the motors via L298
+- Sends a comma-separated sensor packet over serial to the Raspberry Pi
