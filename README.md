@@ -99,11 +99,11 @@ TF defines a tree like:
 map  →  odom  →  base_link  →  laser
 
 Nodes publish TF transforms at runtime:
--the EKF publishes odom → base_link
--SLAM publishes map → odom
--static publishers define fixed offsets (e.g. base_link → laser)
--Other nodes and RViz ask TF: “Where is base_link relative to map right now?”
--If TF is missing or wrong: RViz shows errors like “Frame [map] does not exist” or SLAM can’t update the map correctly or Navigation has no idea where the robot is
+        -the EKF publishes odom → base_link
+        -SLAM publishes map → odom
+        -static publishers define fixed offsets (e.g. base_link → laser)
+        -Other nodes and RViz ask TF: “Where is base_link relative to map right now?”
+        -If TF is missing or wrong: RViz shows errors like “Frame [map] does not exist” or SLAM can’t update the map correctly or Navigation has no idea where the robot is
 
 
 ### 4.URDF – The Robot Blueprint
@@ -210,28 +210,27 @@ This structure is what makes large robot projects easier to manage, debug, and e
 
 On Raspberry Pi:
 
-```bash
 cd ~/ros2_ws
 source /opt/ros/jazzy/setup.bash
 source install/setup.bash
 ros2 run arduino_bridge serial_node
 
 2. Start EKF node
-bash
-Copy code
+
 cd ~/ros2_ws
 source /opt/ros/jazzy/setup.bash
 source install/setup.bash
 ros2 launch arduino_bridge ekf.launch.py
 
 3. Start LiDAR driver
-bash
-Copy code
+
 ros2 launch sllidar_ros2 sllidar_c1_launch.py serial_port:=/dev/ttyUSB0
 
 4. (Later) Start SLAM
+
 TODO: add SLAM launch command once configured.
 When all are running, you should see:
+
 /odom_raw, /imu/data_raw, /mag from Arduino bridge
 /odometry/filtered from EKF
 /scan from LiDAR
