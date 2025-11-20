@@ -64,7 +64,7 @@ YAML = configuration file with parameters for nodes.
 Instead of hard-coding values inside the code, we put them in a YAML file:
 
 yaml
-Copy code
+
 slam_toolbox:
   ros__parameters:
     scan_topic: /scan
