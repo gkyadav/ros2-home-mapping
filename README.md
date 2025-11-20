@@ -86,24 +86,24 @@ If the YAML is missing, the node may:
 
 
 ### 3.TF – The Coordinate System Glue
-TF = system that tracks how all coordinate frames relate to each other.
-
-In robotics we care about where things are:
-map – global map frame
-odom – odometry frame
-base_link – robot body center
-laser / camera – sensors mounted on the robot
-
-TF defines a tree like:
-
-map  →  odom  →  base_link  →  laser
-
-Nodes publish TF transforms at runtime:
-        -the EKF publishes odom → base_link
-        -SLAM publishes map → odom
-        -static publishers define fixed offsets (e.g. base_link → laser)
-        -Other nodes and RViz ask TF: “Where is base_link relative to map right now?”
-        -If TF is missing or wrong: RViz shows errors like “Frame [map] does not exist” or SLAM can’t update the map correctly or Navigation has no idea where the robot is
+        TF = system that tracks how all coordinate frames relate to each other.
+        
+        In robotics we care about where things are:
+        map – global map frame
+        odom – odometry frame
+        base_link – robot body center
+        laser / camera – sensors mounted on the robot
+        
+        TF defines a tree like:
+        
+        map  →  odom  →  base_link  →  laser
+        
+        Nodes publish TF transforms at runtime:
+                -the EKF publishes odom → base_link
+                -SLAM publishes map → odom
+                -static publishers define fixed offsets (e.g. base_link → laser)
+                -Other nodes and RViz ask TF: “Where is base_link relative to map right now?”
+                -If TF is missing or wrong: RViz shows errors like “Frame [map] does not exist” or SLAM can’t update the map correctly or Navigation has no idea where the robot is
 
 
 ### 4.URDF – The Robot Blueprint
