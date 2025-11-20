@@ -151,36 +151,36 @@ If the launch file is missing, you can still run nodes manually – it’s just 
 ### 6.How It All Fits Together (Example: LiDAR + Arduino + SLAM)
 Here’s a typical pipeline for a small mobile robot:
 
-[Arduino firmware]  (on microcontroller)
-      │
-      ▼  (serial)
-[serial_node]  (ROS node on RPi)
-publishes: /odom_raw, /imu/data_raw, /tf? (optional)
-      │
-      ▼
-[EKF node]  (robot_localization)
-reads: /odom_raw, /imu/data_raw
-uses: ekf.yaml parameters
-publishes:
-    - /odometry/filtered
-    - TF: odom → base_link
-      │
-      │
-[LiDAR node]  (sllidar_ros2)
-publishes: /scan (frame_id=base_link)
-      │
-      ▼
-[SLAM node]  (slam_toolbox)
-reads: /scan + TF (odom → base_link)
-uses: slam_toolbox YAML
-publishes:
-    - /map
-    - TF: map → odom
-      │
-      ▼
-[RViz]
-subscribes to: /scan, /map, /tf
-shows the robot and map in Fixed Frame = map
+         [Arduino firmware]  (on microcontroller)
+              │
+              ▼  (serial)
+         [serial_node]  (ROS node on RPi)
+        publishes: /odom_raw, /imu/data_raw, /tf? (optional)
+              │
+              ▼
+          [EKF node]  (robot_localization)
+        reads: /odom_raw, /imu/data_raw
+        uses: ekf.yaml parameters
+        publishes:
+            - /odometry/filtered
+            - TF: odom → base_link
+              │
+              │
+         [LiDAR node]  (sllidar_ros2)
+        publishes: /scan (frame_id=base_link)
+              │
+              ▼
+         [SLAM node]  (slam_toolbox)
+        reads: /scan + TF (odom → base_link)
+        uses: slam_toolbox YAML
+        publishes:
+            - /map
+            - TF: map → odom
+              │
+              ▼
+            [RViz]
+        subscribes to: /scan, /map, /tf
+        shows the robot and map in Fixed Frame = map
 
 Around this pipeline:
  1. Nodes do all the work.
