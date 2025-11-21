@@ -68,6 +68,7 @@ yaml
 slam_toolbox:
   ros__parameters:
     scan_topic: /scan
+    baud_rate:460800
     base_frame: base_link
     odom_frame: odom
     map_frame: map
