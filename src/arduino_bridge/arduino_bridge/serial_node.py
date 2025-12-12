@@ -24,8 +24,8 @@ WHEEL_BASE = 0.20             # Wheel separation (L) in meters
 
 # Derived constants
 TICKS_PER_METER = TICKS_PER_REV / (math.pi * WHEEL_DIAM)
-MAX_PWM = 255.0               # L298N max
-MAX_LINEAR_SPEED = 0.5        # Max linear speed in m/s (Adjust this if needed)
+MAX_PWM = 80.0               # L298N max
+MAX_LINEAR_SPEED = 0.1        # Max linear speed in m/s (Adjust this if needed)
 
 # IMU Conversion constants
 G_TO_ACCEL = 9.80665  # Standard gravity (m/s^2)

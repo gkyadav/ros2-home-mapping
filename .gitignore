@@ -6,3 +6,6 @@ log/
 .ros/
 *.pyc
 __pycache__/
+frames_*.pdf
+frames_*.gv
+.~lock.*

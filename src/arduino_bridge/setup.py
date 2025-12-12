@@ -35,6 +35,7 @@ setup(
         'console_scripts': [
             # Your serial bridge node
             'serial_node = arduino_bridge.serial_node:main',
+            'keyboard_teleop = arduino_bridge.keyboard_teleop_node:main',
         ],
     },
 )
