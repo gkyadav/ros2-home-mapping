@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>lidar_slam_bringup</name>
+  <version>0.0.1</version>
+  <description>LiDAR SLAM bringup for home mapping robot</description>
+
+  <maintainer email="you@example.com">Gaurav</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Launch system -->
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <!-- Runtime dependencies -->
+  <exec_depend>arduino_bridge</exec_depend>
+  <exec_depend>robot_localization</exec_depend>
+  <exec_depend>sllidar_ros2</exec_depend>
+  <exec_depend>slam_toolbox</exec_depend>
+  <exec_depend>nav2_lifecycle_manager</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+
+  <!-- THIS IS THE MISSING PIECE -->
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+
